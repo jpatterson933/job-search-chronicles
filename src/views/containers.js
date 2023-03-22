@@ -1,8 +1,8 @@
 import React from "react";
-import { NavBar } from "../components/Nav";
+import { AsideBar } from "../components/Aside";
 
-export const NavContainer = () => {
+export const AsideContainer = () => {
     return (
-        <NavBar />
+        <AsideBar />
     )
 }
