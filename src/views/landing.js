@@ -1,8 +1,8 @@
 import React from "react";
-import { NavContainer } from "./containers";
+import { AsideContainer } from "./containers";
 
 export const LandingPage = () => {
     return (
-        <NavContainer />
+        <AsideContainer />
     )
 }
