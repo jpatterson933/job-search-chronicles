@@ -7,11 +7,44 @@
     width: fit-content;
     margin: 12px;
     padding: 6px;
-    height: 100vh; /* Trying to take up the entire left side of screen. Not tested since comp is solo */
+    height: 100vh;
+    /* Trying to take up the entire left side of screen. Not tested since comp is solo */
 
 }
 
 .aside-button {
-    padding: 6px;
-    margin: 12px;
+    cursor: pointer;
+    color: darkblue;
+    margin: 2px;
+    font-size: 24px;
+    padding: 8px;
+    width: 116.8px;
+    text-align: center;
+    border: 3px solid transparent;
+    border-radius: 12px;
+    background: linear-gradient(white, white) padding-box, linear-gradient(to right, darkblue, rgb(6 175 255)) border-box;
+}
+
+.aside-button:hover {
+    background: linear-gradient(white, white) padding-box, linear-gradient(to right, rgb(6 175 255), darkblue) border-box;
+}
+
+.show-aside-button::after {
+    content: "Show";
+}
+
+.hide-aside-button::after {
+    content: "Hide";
+}
+
+/* ///----------------------------------------------------------------------------------/// */
+
+
+.aside-links-visible {
+    opacity: 100;
+    transition: all 0.4ms ease-in-out;
+}
+.aside-links-hidden {
+    display: none;
+    opacity: 0;
 }
