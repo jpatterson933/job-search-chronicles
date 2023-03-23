@@ -1,4 +1,17 @@
 .aside-bar {
+    /* define position in case I want to change  */
+    position: static;
     display: flex;
     flex-direction: column;
+    text-align: center;
+    width: fit-content;
+    margin: 12px;
+    padding: 6px;
+    height: 100vh; /* Trying to take up the entire left side of screen. Not tested since comp is solo */
+
+}
+
+.aside-button {
+    padding: 6px;
+    margin: 12px;
 }
