@@ -42,9 +42,10 @@
 
 .aside-links-visible {
     opacity: 100;
-    transition: all 0.4ms ease-in-out;
+    transition: opacity 0.4ms ease-in-out;
 }
 .aside-links-hidden {
     display: none;
+    transition: opacity 0.4ms ease-in-out;
     opacity: 0;
 }
