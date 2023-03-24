@@ -1,1 +1,6 @@
 /* Holds styling for containers.js and landing.js  */
+
+#content {
+    display: flex;
+    flex-direction: row;
+}

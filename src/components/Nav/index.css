@@ -1,0 +1,14 @@
+.nav-link {
+    margin: 2px;
+    font-size: 24px;
+    padding: 8px;
+    text-align: center;
+    color: darkblue;
+    border: 3px solid darkblue;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.nav-link:hover {
+    /* background: black; */
+}

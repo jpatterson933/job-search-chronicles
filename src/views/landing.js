@@ -1,8 +1,13 @@
 import React from "react";
-import { AsideContainer } from "./containers";
+import './index.css';
+import { AsideContainer, NavContainer } from "./containers";
 
 export const LandingPage = () => {
     return (
-        <AsideContainer />
+        // we are doing flex with the direction being a row for the header elements 
+        <header id="content">
+            <AsideContainer />
+            <NavContainer />
+        </header>
     )
 }
