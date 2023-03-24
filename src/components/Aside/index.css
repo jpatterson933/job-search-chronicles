@@ -1,4 +1,45 @@
 .aside-bar {
+    position: static;
     display: flex;
     flex-direction: column;
+    text-align: center;
+    width: fit-content;
+    margin: 12px;
+    padding: 6px;
+    height: 100vh;
+}
+
+.aside-button {
+    cursor: pointer;
+    color: darkblue;
+    margin: 2px;
+    font-size: 24px;
+    padding: 8px;
+    width: 116.8px;
+    text-align: center;
+    border: 3px solid transparent;
+    border-radius: 12px;
+    background: linear-gradient(white, white) padding-box, linear-gradient(to right, darkblue, rgb(6 175 255)) border-box;
+}
+/* Flip the background linear-gradent here for a cool onhover effect  */
+.aside-button:hover {
+    background: linear-gradient(white, white) padding-box, linear-gradient(to right, rgb(6 175 255), darkblue) border-box;
+}
+
+.show-aside-button::after {
+    content: "Show";
+}
+
+.hide-aside-button::after {
+    content: "Hide";
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 100;
+    }
+
+    to {
+        opacity: 0;
+    }
 }
