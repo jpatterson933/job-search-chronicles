@@ -10,7 +10,6 @@
     border-radius: 12px;
     background: linear-gradient(white, white) padding-box, linear-gradient(to right, darkblue, rgb(6 175 255)) border-box;
 }
-/* I would like to add a transition state between .aside-links and .aside-links:hover 3.22.2023 */
 
 .aside-links:visited {
     text-decoration: none;

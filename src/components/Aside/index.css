@@ -1,5 +1,4 @@
 .aside-bar {
-    /* define position in case I want to change  */
     position: static;
     display: flex;
     flex-direction: column;
@@ -8,8 +7,6 @@
     margin: 12px;
     padding: 6px;
     height: 100vh;
-    /* Trying to take up the entire left side of screen. Not tested since comp is solo */
-
 }
 
 .aside-button {
@@ -24,7 +21,7 @@
     border-radius: 12px;
     background: linear-gradient(white, white) padding-box, linear-gradient(to right, darkblue, rgb(6 175 255)) border-box;
 }
-
+/* Flip the background linear-gradent here for a cool onhover effect  */
 .aside-button:hover {
     background: linear-gradient(white, white) padding-box, linear-gradient(to right, rgb(6 175 255), darkblue) border-box;
 }
@@ -35,9 +32,7 @@
 
 .hide-aside-button::after {
     content: "Hide";
-
 }
-
 
 @keyframes fade-out {
     from {

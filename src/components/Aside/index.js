@@ -1,22 +1,23 @@
 import React, { useState } from "react";
 import { AsideLink } from "../AsideLinks";
+import { Button } from "../Button";
 import './index.css';
+
 export const AsideBar = () => {
     const [show, setShow] = useState();
     const [isClicked, setIsClicked] = useState();
-    // we just set the opposit value when the click occurs if isclicked is true, the relevant items will be hidden
+    // switch between fade-in and fade-out
     const handleClick = () => {
         setShow(!show)
         setIsClicked(!isClicked)
     }
-    // i can create a function or a object that holds the styles, and then a function that alters the styles 
-    // on the css property when isClicked is true
+    // fade-in
     const asideLinkStyles = {
         opacity: 100,
         visibility: "visible",
         transition: "opacity 1s ease-in-out, visibility 1s ease-in-out"
     }
-    // visibility 1s ease-in-out and the transition below are both responsible for the fading out
+    // fade-out
     const noAsideLinkVisible = {
         opacity: 0,
         visibility: "hidden",
@@ -25,7 +26,7 @@ export const AsideBar = () => {
 
     return (
         <aside className="aside-bar">
-            <button className={isClicked ? "aside-button show-aside-button" : "aside-button hide-aside-button"} onClick={handleClick}></button>
+            <Button className={isClicked ? "aside-button show-aside-button" : "aside-button hide-aside-button"} onClick={handleClick} />
             <AsideLink style={isClicked ? noAsideLinkVisible : asideLinkStyles} rel="external" href="https://jpatterson933.github.io/resume/">Resume</AsideLink>
             <AsideLink style={isClicked ? noAsideLinkVisible : asideLinkStyles} rel="external" href="https://main--tourmaline-palmier-f34cc1.netlify.app/">Portfolio</AsideLink>
             <AsideLink style={isClicked ? noAsideLinkVisible : asideLinkStyles} rel="external" href="https://github.com/jpatterson933">Github</AsideLink>
