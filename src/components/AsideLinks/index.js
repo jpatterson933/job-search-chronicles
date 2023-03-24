@@ -3,6 +3,6 @@ import './index.css';
 
 export const AsideLink = (props) => {
     return (
-        <a {...props}>{props.children}</a>
+        <a className="aside-links" {...props}>{props.children}</a>
     )
 }

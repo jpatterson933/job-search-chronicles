@@ -35,17 +35,16 @@
 
 .hide-aside-button::after {
     content: "Hide";
+
 }
 
-/* ///----------------------------------------------------------------------------------/// */
 
+@keyframes fade-out {
+    from {
+        opacity: 100;
+    }
 
-.aside-links-visible {
-    opacity: 100;
-    transition: opacity 0.4ms ease-in-out;
-}
-.aside-links-hidden {
-    display: none;
-    transition: opacity 0.4ms ease-in-out;
-    opacity: 0;
+    to {
+        opacity: 0;
+    }
 }
