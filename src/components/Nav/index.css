@@ -4,8 +4,8 @@
     padding: 8px;
     text-align: center;
     color: darkblue;
-    border: 3px solid darkblue;
-    border-radius: 12px;
+    border: 1px solid darkblue;
+    border-radius: 12px 12px 0 0;
     cursor: pointer;
 }
 
@@ -17,4 +17,8 @@ th, td {
     border: 1px dashed black;
     padding: 0 5px;
     text-align: center;
+}
+
+#linked-section {
+    flex-basis: auto;
 }

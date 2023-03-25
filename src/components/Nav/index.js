@@ -60,7 +60,7 @@ export const LinkedIn = () => {
 
 
     return (
-        <section>
+        <section id="linked-section">
             <table>
                 <thead>
                     <tr>
