@@ -12,3 +12,9 @@
 .nav-link:hover {
     /* background: black; */
 }
+
+th, td {
+    border: 1px dashed black;
+    padding: 0 5px;
+    text-align: center;
+}

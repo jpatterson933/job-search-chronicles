@@ -1,6 +1,6 @@
 /* Holds styling for containers.js and landing.js  */
-
-#content {
+/* This currently holds the style for our header -- which is currently the tabs and data that shows*/
+#header {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }

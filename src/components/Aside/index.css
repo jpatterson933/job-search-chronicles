@@ -7,6 +7,7 @@
     margin: 12px;
     padding: 6px;
     height: 100vh;
+    float: right;
 }
 
 .aside-button {
