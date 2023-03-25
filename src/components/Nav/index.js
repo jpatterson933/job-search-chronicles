@@ -36,6 +36,8 @@ export const LinkedIn = () => {
                 case "Hybrid":
                     remoteStyle = { background: "#e9e918d1" }
                     break;
+                default:
+                    break;
             }
 
             (job.Easy_Apply === "Yes") ? easyStyle = { background: "#79d479d4" } : easyStyle = { background: "#f6000075" };
