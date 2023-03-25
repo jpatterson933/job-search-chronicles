@@ -1,0 +1,24 @@
+.nav-link {
+    margin: 2px;
+    font-size: 24px;
+    padding: 8px;
+    text-align: center;
+    color: darkblue;
+    border: 1px solid darkblue;
+    border-radius: 12px 12px 0 0;
+    cursor: pointer;
+}
+
+.nav-link:hover {
+    /* background: black; */
+}
+
+th, td {
+    border: 1px dashed black;
+    padding: 0 5px;
+    text-align: center;
+}
+
+#linked-section {
+    flex-basis: auto;
+}

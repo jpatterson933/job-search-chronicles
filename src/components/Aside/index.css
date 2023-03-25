@@ -1,5 +1,6 @@
+/* at 1188px will need to add media query to switch the flex direction to row // position currently fixed  */
 .aside-bar {
-    position: static;
+    position: fixed;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -7,7 +8,17 @@
     margin: 12px;
     padding: 6px;
     height: 100vh;
+    float: right;
+    top: 0;
+    right: 0;
 }
+
+@media (max-width: 1187px) {
+    .aside-bar {
+        position: static;
+    }
+}
+
 
 .aside-button {
     cursor: pointer;
@@ -21,6 +32,7 @@
     border-radius: 12px;
     background: linear-gradient(white, white) padding-box, linear-gradient(to right, darkblue, rgb(6 175 255)) border-box;
 }
+
 /* Flip the background linear-gradent here for a cool onhover effect  */
 .aside-button:hover {
     background: linear-gradient(white, white) padding-box, linear-gradient(to right, rgb(6 175 255), darkblue) border-box;
