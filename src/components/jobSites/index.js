@@ -21,16 +21,19 @@ export const JobSiteTable = (props) => {
     }, []);
 
     const isSmallScreen = windowWidth <= 768; // Change this value to the breakpoint you desire
+    // const isMediumScreen = windowWidth <= 1168; // Change this value to the breakpoint you desire
 
     const createTable = () => {
         const sortedJobs = jobSites[props.site].sort((a, b) => new Date(b.Date) - new Date(a.Date)); // sort the dates
+
         return sortedJobs.map((job, index) => {
             let rowStyle = {}; // style entire row
             let easyStyle = {}; // styling for easy apply for linkedin // Will need to pass props to use it for indeed // apply_now = indeed
             let remoteStyle = {}; // style for remote work
             let accountStyle = {}; // style if I am required to create a new account on a different site to applye
             let statusStyle = {}; // style if I am required to fill in all information readily avaialbe on linked in for a resume app
-
+            
+            console.log(job.Date)
             switch (job.Remote) {
                 case "Yes":
                     remoteStyle = { background: "#79d479d4" }
@@ -56,6 +59,25 @@ export const JobSiteTable = (props) => {
             } else if (job.Status === "REJECTED") {
                 statusStyle = { background: "#f6000075" }
                 rowStyle = { textDecoration: "line-through" }
+            } else if (job.Status === "Application Viewed") {
+                statusStyle = { background: "yellow" }
+            }
+
+            switch (job.Status) {
+                case "APPLIED":
+                    statusStyle = { background: "#79d479d4" }
+                    break;
+                case "Application Viewed":
+                    statusStyle = { background: "#e9e918d1" }
+                    break;
+                case "Resume Downloaded":
+                    statusStyle = { background: "#009aff59" }
+                    break;
+                case "REJECTED":
+                    statusStyle = { background: "#f6000075" }
+                    break;
+                default:
+                    break;
             }
 
             return (

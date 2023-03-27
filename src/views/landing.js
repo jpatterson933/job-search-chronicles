@@ -7,7 +7,7 @@ export const LandingPage = () => {
         <>
         {/* // we are doing flex with the direction being a row for the header elements */}
             <HeaderContainer />
-            <AsideContainer />
+            {/* <AsideContainer /> */}
         </>
     )
 }
