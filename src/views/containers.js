@@ -21,6 +21,7 @@ export const HeaderContainer = () => {
                 Rejection Chronicles
                 <span className={styles.sheen}></span>
                 </h1>
+                <AsideBar />
             <NavContainer />
         </header>
     )

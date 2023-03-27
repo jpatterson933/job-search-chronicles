@@ -6,8 +6,8 @@
     padding: 8px;
     width: 4em;
     text-align: center;
-    border: 3px solid transparent;
-    border-radius: 12px;
+    border: 1px dashed white;
+    border-radius: 12px 0 12px 0;
     background: linear-gradient(white, white) padding-box, linear-gradient(to right, darkblue, rgb(6 175 255)) border-box;
 }
 
@@ -16,5 +16,7 @@
 }
 
 .aside-links:hover {
+    /* border: 2px dashed white; */
+
     background: linear-gradient(white, white) padding-box, linear-gradient(to right, rgb(6 175 255), darkblue) border-box;
 }
