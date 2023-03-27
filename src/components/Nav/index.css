@@ -1,3 +1,7 @@
+.tab-nav {
+    display: flex;
+}
+
 .nav-link {
     margin: 2px;
     font-size: 24px;
@@ -27,11 +31,23 @@
     /* background: black; */
 }
 
-th, td {
+th,
+td {
     border: 1px dashed black;
     padding: 0 5px;
     text-align: center;
 }
+
+@media (max-width: 1187px) {
+
+    th,
+    td {
+        border: 1px dashed black;
+        padding: 0 5px;
+        text-align: center;
+    }
+}
+
 
 #linked-section {
     flex-basis: auto;
