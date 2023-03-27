@@ -9,6 +9,20 @@
     cursor: pointer;
 }
 
+.nav-link-disabled {
+    margin: 2px;
+    font-size: 24px;
+    padding: 8px;
+    text-align: center;
+    color: #00008b73;
+    border: 0.5px dashed darkblue;
+    border-radius: 12px 12px 0 0;
+    cursor: pointer;
+}
+
+
+
+
 .nav-link:hover {
     /* background: black; */
 }
