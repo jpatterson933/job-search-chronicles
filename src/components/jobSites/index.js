@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import './index.css';
 
 import linkedInJobs from '../../data/linked_jobs.json';
@@ -11,6 +11,17 @@ const jobSites = [linkedInJobs, indeedJobs, wellfoundJobs];
 // most likely going to use python to convert the excel .csv file to json data and then parse through that data to create a table
 
 export const JobSiteTable = (props) => {
+
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleResize = () => setWindowWidth(window.innerWidth);
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    const isSmallScreen = windowWidth <= 768; // Change this value to the breakpoint you desire
+
     const createTable = () => {
         const sortedJobs = jobSites[props.site].sort((a, b) => new Date(b.Date) - new Date(a.Date)); // sort the dates
         return sortedJobs.map((job, index) => {
@@ -52,17 +63,16 @@ export const JobSiteTable = (props) => {
                     <td>{job.Job_Title}</td>
                     <td>{job.Date}</td>
                     <td>{job.Company}</td>
-                    <td style={easyStyle}>{job.Apply}</td> {/** easy_apply = linkedin // apply_now = indeed */}
-                    <td style={remoteStyle}>{job.Remote}</td>
-                    <td style={accountStyle}>{job.Account}</td>
-                    <td style={accountStyle}>{job.Refill}</td>
+                    {!isSmallScreen && <td style={easyStyle}>{job.Apply}</td>}
+                    {!isSmallScreen && <td style={remoteStyle}>{job.Remote}</td>}
+                    {!isSmallScreen && <td style={accountStyle}>{job.Account}</td>}
+                    {!isSmallScreen && <td style={accountStyle}>{job.Refill}</td>}
                     <td style={statusStyle}>{job.Status}</td>
-                    <td>{job.Reason}</td>
+                    {!isSmallScreen && <td>{job.Reason}</td>}
                 </tr>
             );
         });
     };
-
 
     return (
         <section id="linked-section">
@@ -72,18 +82,18 @@ export const JobSiteTable = (props) => {
                         <th>Job Title</th>
                         <th>Date</th>
                         <th>Company</th>
-                        <th>{props.apply_onsite}</th> {/**Easy Apply = linked // Apply_Now = indeed */}
-                        <th>Remote</th>
-                        <th>Account</th>
-                        <th>Refill</th>
+                        {!isSmallScreen && <th>{props.apply_onsite}</th>}
+                        {!isSmallScreen && <th>Remote</th>}
+                        {!isSmallScreen && <th>Account</th>}
+                        {!isSmallScreen && <th>Refill</th>}
                         <th>Status</th>
-                        <th>Reason</th>
+                        {!isSmallScreen && <th>Reason</th>}
                     </tr>
                 </thead>
-                <tbody>
-                    {createTable()}
-                </tbody>
+                <tbody>{createTable()}</tbody>
             </table>
         </section>
     );
 };
+
+
