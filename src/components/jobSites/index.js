@@ -32,8 +32,8 @@ export const JobSiteTable = (props) => {
             let remoteStyle = {}; // style for remote work
             let accountStyle = {}; // style if I am required to create a new account on a different site to applye
             let statusStyle = {}; // style if I am required to fill in all information readily avaialbe on linked in for a resume app
-            
-            console.log(job.Date)
+            const colors = ["blue"]
+            let colorIndex = 0;
             switch (job.Remote) {
                 case "Yes":
                     remoteStyle = { background: "#79d479d4" }
@@ -52,20 +52,13 @@ export const JobSiteTable = (props) => {
             // require account creation on separate site
             (job.Account === "No") ? accountStyle = { background: "#79d479d4" } : accountStyle = { background: "#f6000075" };
 
-
-            // either applied or rejected // will need to add INTERVIEWING if it occurs
-            if (job.Status === "APPLIED") {
-                statusStyle = { background: "#79d479d4" }
-            } else if (job.Status === "REJECTED") {
-                statusStyle = { background: "#f6000075" }
-                rowStyle = { textDecoration: "line-through" }
-            } else if (job.Status === "Application Viewed") {
-                statusStyle = { background: "yellow" }
-            }
-
+            const styleObjects = [rowStyle, easyStyle, remoteStyle, accountStyle, statusStyle]
             switch (job.Status) {
                 case "APPLIED":
                     statusStyle = { background: "#79d479d4" }
+                    break;
+                case "No Response":
+                    styleObjects.forEach(style => { style.background = "grey"; style.opacity = "0.9" })
                     break;
                 case "Application Viewed":
                     statusStyle = { background: "#e9e918d1" }
@@ -74,16 +67,27 @@ export const JobSiteTable = (props) => {
                     statusStyle = { background: "#009aff59" }
                     break;
                 case "REJECTED":
+                    styleObjects.forEach(style => {
+                        style.background = "#f6000075";
+                        style.textDecoration = "line-through";
+                        style.opacity = "0.5";
+                    })
+
                     statusStyle = { background: "#f6000075" }
                     break;
                 default:
                     break;
             }
 
+
+            const dateStyle = { color: colors[colorIndex] };
+            colorIndex = (colorIndex + 1) % colors.length;
+
+
             return (
                 <tr key={index} style={rowStyle}>
                     <td>{job.Job_Title}</td>
-                    <td>{job.Date}</td>
+                    <td style={dateStyle}>{job.Date}</td>
                     <td>{job.Company}</td>
                     {!isSmallScreen && <td style={easyStyle}>{job.Apply}</td>}
                     {!isSmallScreen && <td style={remoteStyle}>{job.Remote}</td>}
