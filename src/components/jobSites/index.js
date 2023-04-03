@@ -32,8 +32,6 @@ export const JobSiteTable = (props) => {
             let remoteStyle = {}; // style for remote work
             let accountStyle = {}; // style if I am required to create a new account on a different site to applye
             let statusStyle = {}; // style if I am required to fill in all information readily avaialbe on linked in for a resume app
-            const colors = ["blue"]
-            let colorIndex = 0;
             switch (job.Remote) {
                 case "Yes":
                     remoteStyle = { background: "#79d479d4" }
@@ -58,43 +56,47 @@ export const JobSiteTable = (props) => {
                     statusStyle = { background: "#79d479d4" }
                     break;
                 case "No Response":
-                    styleObjects.forEach(style => { style.background = "grey"; style.opacity = "0.9" })
+                    styleObjects.forEach(style => {
+                        console.log(style)
+                        style.background = "#bcbaba";
+                        style.opacity = "0.9"
+                    })
                     break;
                 case "Application Viewed":
-                    statusStyle = { background: "#e9e918d1" }
+                    rowStyle = {background: "#e9e918d1"}
+
                     break;
                 case "Resume Downloaded":
+                    rowStyle = {background: "#009aff59"}
+
+                    break;
+                case "Messaged Recruiter":
                     statusStyle = { background: "#009aff59" }
                     break;
                 case "REJECTED":
                     styleObjects.forEach(style => {
-                        style.background = "#f6000075";
                         style.textDecoration = "line-through";
-                        style.opacity = "0.5";
+                        style.opacity = "0.3";
                     })
 
-                    statusStyle = { background: "#f6000075" }
+                    // statusStyle = { background: "#f6000075" }
                     break;
                 default:
                     break;
             }
 
 
-            const dateStyle = { color: colors[colorIndex] };
-            colorIndex = (colorIndex + 1) % colors.length;
-
-
             return (
                 <tr key={index} style={rowStyle}>
                     <td>{job.Job_Title}</td>
-                    <td style={dateStyle}>{job.Date}</td>
+                    <td>{job.Date}</td>
                     <td>{job.Company}</td>
                     {!isSmallScreen && <td style={easyStyle}>{job.Apply}</td>}
                     {!isSmallScreen && <td style={remoteStyle}>{job.Remote}</td>}
                     {!isSmallScreen && <td style={accountStyle}>{job.Account}</td>}
                     {!isSmallScreen && <td style={accountStyle}>{job.Refill}</td>}
                     <td style={statusStyle}>{job.Status}</td>
-                    {!isSmallScreen && <td>{job.Reason}</td>}
+                    <td>{job.Reason}</td>
                 </tr>
             );
         });
